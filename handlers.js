@@ -1,3 +1,6 @@
 module.exports = ({ axios }) => ({
-    get: (req, res) => res.send('Hello World!')
+    get: async (req, res) => {
+        const { data } = await axios.get('/users')
+        res.send(data)
+    }
 })
