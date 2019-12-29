@@ -1,4 +1,5 @@
 const express = require('express')
+const parser = require('body-parser')
 const services = require('./services')
 const handlers = require('./handlers')
 const app = express()
