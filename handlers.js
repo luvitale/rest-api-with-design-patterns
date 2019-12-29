@@ -8,11 +8,11 @@ module.exports = ({ axios }) => ({
         return res.send(data)
     },
     put: async (req, res) => {
-        const { data } = await axios.put('/users/${req.params.id}', req.body)
+        const { data } = await axios.put(`/users/${req.params.id}`, req.body)
         return res.send(data)
     },
     delete: async (req, res) => {
-        await axios.delete('/users/${req.params.id}')
+        await axios.delete(`/users/${req.params.id}`)
         return res.sendStatus(204)
     },
 })
