@@ -8,4 +8,4 @@ const adapter = {
     get: url => instance.get(url)
 }
 
-module.exports = instance
+module.exports = adapter
