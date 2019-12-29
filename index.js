@@ -1,8 +1,9 @@
 const express = require('express')
 const parser = require('body-parser')
 const services = require('./services')
-const handlers = require('./handlers')
+const handlify = require('./handlers')
 
+const usersHandler = handlify('users')
 const app = express()
 
 // parse application/x-www-form-urlencoded
@@ -13,9 +14,9 @@ app.use(parser.json())
 
 const port = 3000
 
-app.get('/', handlers(services).get)
-app.post('/', handlers(services).post)
-app.put('/:id', handlers(services).put)
-app.delete('/:id', handlers(services).delete)
+app.get('/', usersHandler(services).get)
+app.post('/', usersHandler(services).post)
+app.put('/:id', usersHandler(services).put)
+app.delete('/:id', usersHandler(services).delete)
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
