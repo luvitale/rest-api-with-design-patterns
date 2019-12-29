@@ -4,4 +4,4 @@ const instance = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com'
 })
 
-module.exports = instance;
+module.exports = instance
